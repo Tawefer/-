@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الخدمات الرقمية</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #f0f0f0;
+            direction: rtl;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #444;
+        }
+        header img {
+            height: 60px;
+        }
+        nav a {
+            color: #f0f0f0;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #1e90ff;
+        }
+        .banner {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px #000;
+        }
+        .services, .pricing {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .services h2, .pricing h2 {
+            margin-bottom: 30px;
+            color: #1e90ff;
+        }
+        .service-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .service-item {
+            background-color: #1f1f1f;
+            padding: 20px;
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+        .service-item h3 {
+            margin-bottom: 10px;
+            color: #1e90ff;
+        }
+        .service-item select {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            background-color: #2a2a2a;
+            color: #f0f0f0;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+        .buy-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        .total-price {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #ffa500;
+        }
+        .pricing-table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        .pricing-table th, .pricing-table td {
+            border: 1px solid #444;
+            padding: 15px;
+        }
+        .pricing-table th {
+            background-color: #1e90ff;
+            color: white;
+        }
+        .pricing-table td {
+            color: #f0f0f0;
+        }
+        footer {
+            background-color: #1f1f1f;
+            color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #444;
+        }
+        footer a {
+            text-decoration: none;
+            color: #1e90ff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .service-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://via.placeholder.com/150x60?text=Logo" alt="شعار المتجر">
+        <nav>
+            <a href="#services">الخدمات</a>
+            <a href="#pricing">الأسعار</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+    </header>
+
+    <div class="banner">
+        أول شراء مجانا! جرب خدماتنا الآن
+    </div>
+
+    <section class="services" id="services">
+        <h2>خدماتنا</h2>
+        <div class="service-list">
+            <!-- خدمة 1 -->
+            <div class="service-item">
+                <h3>مشاهدات الفيديو</h3>
+                <select id="video-views">
+                    <option value="500">500 مشاهدة</option>
+                    <option value="1000">1000 مشاهدة</option>
+                    <option value="5000">5000 مشاهدة</option>
+                </select>
+                <a href="#" id="video-order" class="buy-button">اطلب الآن</a>
+            </div>
+            <!-- خدمة 2 -->
+            <div class="service-item">
+                <h3>لايكات / إعجابات</h3>
+                <select id="likes">
+                    <option value="30">30 لايك</option>
+                    <option value="100">100 لايك</option>
+                    <option value="500">500 لايك</option>
+                </select>
+                <a href="#" id="likes-order" class="buy-button">اطلب الآن</a>
+            </div>
+            <!-- خدمة 3 -->
+            <div class="service-item">
+                <h3>تعليقات مفضلة</h3>
+                <select id="comments">
+                    <option value="50">50 تعليق</option>
+                    <option value="100">100 تعليق</option>
+                    <option value="200">200 تعليق</option>
+                </select>
+                <a href="#" id="comments-order" class="buy-button">اطلب الآن</a>
+            </div>
+            <!-- خدمة 4 -->
+            <div class="service-item">
+                <h3>متابعين (قريباً)</h3>
+                <p>توسيع قاعدة متابعينك قريبًا.</p>
+                <button class="buy-button" disabled>انتظر قريباً</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <h2>الأسعار</h2>
+        <table class="pricing-table">
+            <tr>
+                <th>الخدمة</th>
+                <th>الكمية</th>
+                <th>السعر بالدرهم</th>
+            </tr>
+            <tr>
+                <td>مشاهدات الفيديو</td>
+                <td>500 مشاهدة</td>
+                <td>10 درهم</td>
+            </tr>
+            <tr>
+                <td>لايكات / إعجابات</td>
+                <td>30 لايك</td>
+                <td>5 درهم</td>
+            </tr>
+            <tr>
+                <td>تعليقات مفضلة</td>
+                <td>50 تعليق</td>
+                <td>6 درهم</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer id="contact">
+        <h3>تواصل معنا</h3>
+        <p>📧 البريد الإلكتروني: <a href="mailto:alikhaledalinagati2012@gmail.com">alikhaledalinagati2012@gmail.com</a></p>
+        <p>📱 رقم الهاتف / واتساب: <a href="tel:+971545889335">0545889335</a></p>
+        <p>© 2025 متجر الخدمات الرقمية</p>
+    </footer>
+
+    <script>
+        const phoneNumber = "971545889335"; // رقمك بالإمارات بدون +
+
+        // فتح WhatsApp مع رسالة لكل خدمة
+        document.getElementById("video-order").addEventListener("click", function(e){
+            e.preventDefault();
+            const qty = document.getElementById("video-views").value;
+            const url = `https://wa.me/${phoneNumber}?text=مرحبًا، أريد طلب ${qty} مشاهدة فيديو`;
+            window.open(url, "_blank");
+        });
+
+        document.getElementById("likes-order").addEventListener("click", function(e){
+            e.preventDefault();
+            const qty = document.getElementById("likes").value;
+            const url = `https://wa.me/${phoneNumber}?text=مرحبًا، أريد طلب ${qty} لايك`;
+            window.open(url, "_blank");
+        });
+
+        document.getElementById("comments-order").addEventListener("click", function(e){
+            e.preventDefault();
+            const qty = document.getElementById("comments").value;
+            const url = `https://wa.me/${phoneNumber}?text=مرحبًا، أريد طلب ${qty} تعليق`;
+            window.open(url, "_blank");
+        });
+    </script>
+</body>
+</html>
